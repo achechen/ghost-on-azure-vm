@@ -104,7 +104,7 @@ It should automatically select your subscription. If you have more than one, sel
 ## Checks
 - Check if both instances are online. Use **ghostProductionAddress** and **ghostStagingAddress** urls. **NOTE: It may take up to 15 minutes.**
   ![site](./images/site.png)
-- Check if you can log in as an administrator to both instances using this URL: http://mysite.com/ghost and credentials you entered as inputs. **NOTE: Because staging and production instances use the same cookies, you may not be able to log into the same instances on the same browser session. Use different browsers or private mode.**
+- Check if you can log in as an administrator to both instances using this URL: http://mysite.com/ghost and credentials you entered as inputs. **NOTE: Because staging and production instances use the same cookies, you may not be able to log into the same instances on the same browser session. Use different browsers or private mode.** **NOTE2: If you see a setup screen instead of the login screen, It means that the auto setup operation was not completed yet. Wait until you see the below login screen. DO NOT PERFORM THE SETUP YOURSELF.**
   ![execute](./images/signin.png)
 - You can also check if the instances are running OK by logging into the VM and running ```ghost ls``` command:
   ![site](./images/ghostls.png)
@@ -116,10 +116,11 @@ It should automatically select your subscription. If you have more than one, sel
 ![site](./images/function.png)
 - Use a REST client (such as Postman) to send requests to this URL.
 ![site](./images/postman.png)
+- You can also test the function directly on Azure Portal.
 
 The function can perform 2 operations: **delete all posts** and **move all posts from staging to production**.
 ### Delete all posts
-Send a POST request with the following payload (**environment** can be either ***staging*** or ***production***):
+Send a POST request with the following payload (**environment** can be either ***staging*** or ***prod***):
 ```
 {
     "environment": "staging",
