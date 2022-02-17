@@ -1,4 +1,3 @@
-
 # Introduction
 
 This project consists of **bicep** code that provisions the following **Azure** resources:
